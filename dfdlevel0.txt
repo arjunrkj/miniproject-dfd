@@ -1,0 +1,109 @@
+level 0  
+ +-----------------+
+   |   Recruiter     |
+   |   Seeker        |
+   +-----------------+
+         |   (Login Credentials)
+         v
+  +-------------------------+
+  |    Job Connect System   |
+  |  (Authentication)       |
+  |  (Role-Based Redirect)  |
+  |  (Search Queries)       |
+  +-------------------------+
+         |   (Search Results)
+         v
+   +-----------------+
+   |   Recruiter     |
+   |   Seeker        |
+   +-----------------+
+
+Level 1
+
+  +-----------------+       +---------------------+
+  |   Recruiter     |       |    Seeker           |
+  |   Seeker        |       |    (External Entity)|
+  +-----------------+       +---------------------+
+         |                         |
+   (Login Credentials)          (Login Credentials)
+         v                         v
+  +----------------------------+  +---------------------------+
+  |    1.1 Login Processing    |  |   1.1 Login Processing    |
+  +----------------------------+  +---------------------------+
+         |                         |
+         v                         v
+  +----------------+           +----------------+
+  |  D1: Seeker    |           |  D2: Recruiter |
+  |  Database      |           |  Database      |
+  +----------------+           +----------------+
+         |                         |
+  (Authentication)             (Authentication)
+         |                         |
+         v                         v
+  +----------------+           +----------------+
+  |  1.2 Recruiter |           |   1.3 Seeker   |
+  |    Module      |           |    Module      |
+  +----------------+           +----------------+
+         |                         |
+  (Search Queries)            (Search Queries)
+         v                         v
+  +----------------+           +----------------+
+  | Search Results |           | Search Results |
+  +----------------+           +----------------+
+         |                         |
+   (Search Results)           (Search Results)
+         v                         v
+  +-----------------+       +-----------------+
+  |   Recruiter     |       |   Seeker        |
+  |   (External     |       |   (External     |
+  |    Entity)      |       |    Entity)      |
+  +-----------------+       +-----------------+
+
+Level 2 recrutier
+
+  +-------------------------+
+  |     2.1 Search by       |
+  |        Skills           |
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  |     D1: Seeker Database |
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  | 2.2 View Seeker Profiles|
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  |     Recruiter           |
+  |     (External Entity)   |
+  +-------------------------+
+
+Level 2 Seeker
+
+  +-------------------------+
+  |     2.3 Search by       |
+  |       Job Title         |
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  |   D2: Recruiter Database|
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  |   2.4 View Job Postings |
+  +-------------------------+
+            |
+            v
+  +-------------------------+
+  |      Seeker             |
+  |     (External Entity)   |
+  +-------------------------+
+
+
+
